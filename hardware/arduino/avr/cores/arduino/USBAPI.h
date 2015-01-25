@@ -192,21 +192,21 @@ extern Keyboard_ Keyboard;
 
 typedef struct JoyState // Pretty self explanitory. Simple state to store all the joystick parameters
 {
-  uint8_txAxis;
-  uint8_tyAxis;
-  uint8_tzAxis;
+  uint8_t xAxis;
+  uint8_t yAxis;
+  uint8_t zAxis;
 
-  uint8_txRotAxis;
-  uint8_tyRotAxis;
-  uint8_tzRotAxis;
+  uint8_t xRotAxis;
+  uint8_t yRotAxis;
+  uint8_t zRotAxis;
 
-  uint8_tthrottle;
-  uint8_trudder;
+  uint8_t throttle;
+  uint8_t rudder;
 
-  uint8_thatSw1;
-  uint8_thatSw2;
+  uint8_t hatSw1;
+  uint8_t hatSw2;
 
-  uint32_tbuttons;// 32 general buttons
+  uint32_t buttons;// 32 general buttons
 
 } JoyState_t;
 

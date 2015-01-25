@@ -122,7 +122,7 @@ const u8 _hidReportDescriptor[] = {
 	0x95, 64,				// report count RX
 	0x09, 0x02,				// usage
 	0x91, 0x02,				// Output (array)
-	0xC0					// end collection
+    0xC0,					// end collection
 #endif
     // *** Here is where the RAW_HID has been converted to a Joystick device
     // *** Inspired by helmpcb.com/electronics/usb-joystick
@@ -201,7 +201,7 @@ const u8 _hidReportDescriptor[] = {
     0x81, 0x02,// INPUT (Data,Var,Abs)
     0xc0,// END_COLLECTION
 
-    0xc0// END_COLLECTION
+    0xc0,// END_COLLECTION
 
     //-----------------------------------------------------------------------------
 
