@@ -185,6 +185,88 @@ extern Keyboard_ Keyboard;
 
 //================================================================================
 //================================================================================
+//Joystick
+//  Implemented in HID.cpp
+//  The list of parameters here needs to match the implementation in HID.cpp
+
+
+typedef struct JoyState // Pretty self explanitory. Simple state to store all the joystick parameters
+{
+  uint8_txAxis;
+  uint8_tyAxis;
+  uint8_tzAxis;
+
+  uint8_txRotAxis;
+  uint8_tyRotAxis;
+  uint8_tzRotAxis;
+
+  uint8_tthrottle;
+  uint8_trudder;
+
+  uint8_thatSw1;
+  uint8_thatSw2;
+
+  uint32_tbuttons;// 32 general buttons
+
+} JoyState_t;
+
+class Joystick_
+{
+ public:
+  Joystick_();
+
+  void setState(JoyState_t *joySt);
+
+};
+extern Joystick_ Joystick;
+
+//================================================================================
+//================================================================================
+//Remote 
+ 
+#define REMOTE_CLEAR 0
+#define VOLUME_UP 1
+#define VOLUME_DOWN 2
+#define VOLUME_MUTE 4
+#define REMOTE_PLAY 8
+#define REMOTE_PAUSE 16
+#define REMOTE_STOP 32
+#define REMOTE_NEXT 64
+#define REMOTE_PREVIOUS 128
+#define REMOTE_FAST_FORWARD 256
+#define REMOTE_REWIND 512
+ 
+class Remote_
+{
+ private:
+ public:
+  Remote_(void);
+  void begin(void);
+  void end(void);
+ 
+  // Volume
+  void increase(void);
+  void decrease(void);
+  void mute(void);
+ 
+  // Playback
+  void play(void);
+  void pause(void);
+  void stop(void);
+ 
+  // Track Controls
+  void next(void);
+  void previous(void);
+  void forward(void);
+  void rewind(void);
+ 
+  // Send an empty report to prevent repeated actions
+  void clear(void);
+};
+extern Remote_ Remote;
+
+//================================================================================
+//================================================================================
 //	Low level API
 
 typedef struct
